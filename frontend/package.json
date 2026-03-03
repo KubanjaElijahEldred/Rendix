@@ -2,6 +2,7 @@
   "name": "rendix-frontend",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://KubanjaElijahEldred.github.io/Rendix",
   "dependencies": {
     "@react-three/drei": "^9.88.0",
     "@react-three/fiber": "^8.15.0",
@@ -31,7 +32,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,7 +56,8 @@
   },
   "devDependencies": {
     "@redux-devtools/extension": "^3.3.0",
-    "@types/three": "^0.160.0"
+    "@types/three": "^0.160.0",
+    "gh-pages": "^6.1.1"
   },
   "proxy": "http://localhost:8000"
 }
