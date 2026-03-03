@@ -131,12 +131,14 @@ export const useAIStore = create((set, get) => ({
           break;
 
         case 'ocr':
-          // OCR is handled through document store, but we can track it here
+          response = await api.post(`/documents/${data.documentId}/ocr`);
           responseData = {
             type: 'ocr',
-            content: 'Document processed with OCR',
+            content: response.data.extracted_text || 'Document processed with OCR',
             metadata: {
               documentId: data.documentId,
+              confidence: response.data.ocr_confidence,
+              wordCount: response.data.word_count,
             },
             timestamp: new Date().toISOString(),
           };
