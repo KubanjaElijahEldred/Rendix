@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Rendix/static/css/main.9bc7bc30.css",
+    "main.js": "/Rendix/static/js/main.715dc02e.js",
+    "index.html": "/Rendix/index.html",
+    "main.9bc7bc30.css.map": "/Rendix/static/css/main.9bc7bc30.css.map",
+    "main.715dc02e.js.map": "/Rendix/static/js/main.715dc02e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bc7bc30.css",
+    "static/js/main.715dc02e.js"
+  ]
+}
