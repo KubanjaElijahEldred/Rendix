@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --rendix-blue: #0066ff;
+  --rendix-dark: #0a0e27;
+  --rendix-light: #1a1f3a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.rendix-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: linear-gradient(45deg, #0066ff, #00ff88, #0066ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 102, 255, 0.3);
+}
+
+.glass-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.glass-button:hover::before {
+  left: 100%;
+}
+
+.particle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.loading-dna {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: dna-helix 4s linear infinite;
+}
+
+.loading-dna::before,
+.loading-dna::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+
+.loading-dna::before {
+  border-top-color: #0066ff;
+  animation: rotate-slow 2s linear infinite;
+}
+
+.loading-dna::after {
+  border-bottom-color: #00ff88;
+  animation: rotate-slow 2s linear infinite reverse;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 102, 255, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 102, 255, 0.7);
+}
+
+/* Custom animations for particles */
+@keyframes particle-pulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+.particle-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #0066ff, transparent);
+  border-radius: 50%;
+  animation: particle-pulse 3s ease-in-out infinite;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(0, 102, 255, 0.3);
+}
+
+/* Focus states */
+.focus-ring {
+  outline: none;
+  ring: 2px;
+  ring-color: #0066ff;
+  ring-offset: 2px;
+  ring-offset-color: #0a0e27;
+}
