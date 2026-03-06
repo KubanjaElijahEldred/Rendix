@@ -1,6 +1,6 @@
 # Rendix
 
-Vocal AI Assistant for document processing and interaction
+Vocal AI Assistant for document processing and interaction.
 
 ## Features
 - 🤖 AI-powered document analysis
